@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.use(cors());
 
-// app.use("/api", require("./api/index"));
+app.use("/api", require("./api/index"));
 
 
 app.use((err, req, res, next) => {
