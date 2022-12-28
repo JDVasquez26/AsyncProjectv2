@@ -47,16 +47,16 @@ router.get("/", async (req, res, next) => {
 //   }
 // });
 
-// // DELETE localhost:3001/api/sites/:id
-// router.delete('/:id', async (req, res, next) => {
-//   try {
-//     const site = await Site.findByPk(req.params.id);
-//     await site.destroy();
-//     res.send(todo);
-//   } catch (error) {
-//     next(error);
-//   }
-// });
+// DELETE localhost:3001/api/sites/:id
+router.delete('/:id', async (req, res, next) => {
+  try {
+    const site = await Site.findByPk(req.params.id);
+    await site.destroy();
+    res.send(site);
+  } catch (error) {
+    next(error);
+  }
+});
 
 
 

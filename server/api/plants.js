@@ -68,15 +68,15 @@ router.post("/", async (req, res, next) => {
 //     }
 //   });
 
-//   // DELETE localhost:3001/api/plants/:id
-//   router.delete('/:id', async (req, res, next) => {
-//     try {
-//       const plant = await Plant.findByPk(req.params.id);
-//       await plant.destroy();
-//       res.send(todo);
-//     } catch (error) {
-//       next(error);
-//     }
-//   });
+  // DELETE localhost:3001/api/plants/:id
+  router.delete('/:id', async (req, res, next) => {
+    try {
+      const plant = await Plant.findByPk(req.params.id);
+      await plant.destroy();
+      res.send(plant);
+    } catch (error) {
+      next(error);
+    }
+  });
 
 module.exports = router;

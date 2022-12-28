@@ -6,7 +6,9 @@ import {
   ListPlants,
   ListSites,
   CreatePlant,
-  CreateSite
+  CreateSite,
+  SinglePlant,
+  SingleSite
 } from './components/index'
 
 
@@ -32,11 +34,12 @@ function App() {
       <Routes>
         <Route path = '/' element = {<ListPlants/>}></Route>
         <Route path = '/' element = {<CreatePlant/>}></Route>
+        <Route path = '/plants/:id' element = {<SinglePlant/>}></Route>
+
         <Route path = '/sites' element = {<ListSites/>}></Route>
         <Route path = '/sites' element = {<CreateSite/>}></Route>
-        
+        <Route path = '/sites/:id' element = {<SingleSite/>}></Route>
         {/* <Route path = '' element = {}></Route>
-        <Route path = '' element = {}></Route>
         <Route path = '' element = {}></Route>
         <Route path = '' element = {}></Route> */}
       </Routes>

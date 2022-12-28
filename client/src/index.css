@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.plants-body{
+  /* display: flex;
+  flex-direction: column; */
+  /* justify-content: center; */
+}
+
+.plants-list{
+  display: flex;
+  justify-content: center;
+  flex-direction: center;
+  
+}

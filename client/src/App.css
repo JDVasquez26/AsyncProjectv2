@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 
@@ -22,6 +22,8 @@
 nav {
   display: flex;
   justify-content: space-around;
+  align-items:center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
 
@@ -33,4 +35,74 @@ form {
   flex-grow: 2;
   margin: 1em;
   border: solid black 5px;
+  
+}
+
+.plants-body{
+  display: flex;
+  flex: 0 0 1;
+  justify-content: space-around;
+  border: solid red 3px;
+}
+
+#plants-list{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1em;
+  border: solid black 1px;
+  /* align-items: center; */
+  width:70vw;
+  height:60vh;
+  overflow: auto;
+  /* margin-block-end: auto; */
+
+}
+
+.plant{ 
+  /* display: flex;
+  justify-self: column; */
+  padding-right: 20px;
+}
+
+.sites-body{
+  display: flex;
+  flex: 0 0 1;
+  justify-content: space-around;
+  border: solid red 3px;
+}
+
+#site-title{
+  display: flex;
+}
+#plant-title{
+  display: flex;
+}
+
+button {
+  /* padding: 1em 1em; */
+  margin: 1em 1em;
+  border: none;
+  font-size: 0.75em;
+  transition: all 0.5s ease;
+  outline: none;
+  letter-spacing: 0.1em;
+  height: 30px;
+  width: 70px;
+}
+
+button {
+  color: white;
+  background-color: #59a9e9;
+  /* text-align: center; */
+}
+
+button:hover {
+  background-color:chartreuse;
+}
+
+input {
+  padding: 0.3em;
+  margin: 0.5em 0.5em;
+  font-size: 1.0em;
+  text-align: center;
 }

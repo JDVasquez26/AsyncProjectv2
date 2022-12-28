@@ -17,21 +17,24 @@ function ListSites() {
   }, [dispatch]);
 
   return (
-    <div>
-      <CreateSite/>
+    <div className="sites-body">  
       <div id='sites-list'>
         {sites && sites.length
         ? sites.map((site) => (
           <div
           className='site'
           key={`map of sites in sites list${site.id}`}>
-          {/* <Link to ={`/sites/${site.id}`}> */}
+          <Link to ={`/sites/${site.id}`}>
             <h2>{site.name}</h2>
-          {/* </Link> */}
+          </Link>
           </div>
         ))
       :null}
       </div>
+      <div id="form-container">
+        <CreateSite/>
+      </div>
+
     </div>
   )
 }

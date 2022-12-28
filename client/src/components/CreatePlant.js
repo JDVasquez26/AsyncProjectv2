@@ -33,8 +33,9 @@ function CreatePlant() {
 
   return (
     <div className="createPlant">
-      <h3>Add a Plant</h3>
+      
       <form id="plant-form" onSubmit={handleSubmit}>
+        <h3>Add a Plant</h3>
         <label className="plantName">Plant Name:</label>
         <input
           name="Name"
