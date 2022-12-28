@@ -37,15 +37,15 @@ router.get("/", async (req, res, next) => {
 
 
 // // PUT localhost:3001/api/sites/:id
-// router.put('/:id', async (req, res, next) => {
-//   try {
-//     const site = await Site.findByPk(req.params.id);
-//     console.log("put id: ", req.params.id)
-//     res.send(await site.update(req.body));
-//   } catch (error) {
-//     next(error);
-//   }
-// });
+router.put('/:id', async (req, res, next) => {
+  try {
+    const site = await Site.findByPk(req.params.id);
+    console.log("put id: ", req.params.id)
+    res.send(await site.update(req.body));
+  } catch (error) {
+    next(error);
+  }
+});
 
 // DELETE localhost:3001/api/sites/:id
 router.delete('/:id', async (req, res, next) => {

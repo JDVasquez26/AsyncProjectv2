@@ -16,12 +16,13 @@ export const fetchPlantsAsync = createAsyncThunk(
 
 export const addPlantAsync = createAsyncThunk(
   "plants/addPlant",
-  async ({ name, imageUrl, amazonLink, siteId }) => {
-    console.log("site add plant:", siteId)
-    Number(siteId)
+  async ({ name, imageUrl, amazonLink, siteId}) => {
+    console.log("siteId add plant:", siteId);
+    // console.log("site add plant:", site)
+    // Number(siteId)
     try {
       const { data } = await axios.post(`http://localhost:8088/api/plants`, {
-        name, imageUrl, amazonLink, siteId 
+        name, imageUrl, amazonLink, siteId
       });
       console.log("addPlant data:", data);
       return data

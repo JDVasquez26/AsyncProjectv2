@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSinglePlant, removePlantAsync, selectPlant } from "../features/PlantSlice";
-// import { fetchPlantsAsync } from "../features/ListPlantsSlice";
+import { fetchPlantsAsync } from "../features/ListPlantsSlice";
+import UpdatePlant from './UpdatePlant'
 
 function SinglePlant() {
   const dispatch = useDispatch();
@@ -16,7 +17,9 @@ function SinglePlant() {
   }, [id, dispatch]);
 
 const handleDelete =  (id) => {
-  dispatch(removePlantAsync(id));
+  dispatch(removePlantAsync(id))
+  // .then(() => { dispatch(fetchPlantsAsync());
+  // });
   navigate("/");
 }
 
@@ -43,6 +46,10 @@ const handleDelete =  (id) => {
       
 
       <div id="form-container"></div>
+
+      <div>
+        <UpdatePlant/>
+      </div>
     </div>
   );
 }

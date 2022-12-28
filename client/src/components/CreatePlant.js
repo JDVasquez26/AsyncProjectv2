@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { generatePath, Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPlantsAsync, addPlantAsync } from "../features/ListPlantsSlice";
 import {
     selectSites, fetchSitesAsync
     } from '../features/ListSitesSlice'
 function CreatePlant() {
+
+
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [amazonLink, setAmazonLink] = useState("");
-  const [siteId, setSiteId] = useState()
+  const [siteId, setSiteId] = useState();
+  // const [site, setSite] = useState()
 
   
   const allSites = useSelector(selectSites);
+  console.log('sets from allSites:', allSites)
   const dispatch = useDispatch();
 
   
@@ -21,13 +25,15 @@ function CreatePlant() {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     dispatch(addPlantAsync({name, imageUrl, amazonLink, siteId}))
-    .then(() => { dispatch(fetchPlantsAsync());
+    .then(() => { 
+      dispatch(fetchPlantsAsync());
+      dispatch(fetchSitesAsync());
     });
     setName("");
     setImageUrl('')
     setAmazonLink('')
     // setSiteId('');
-    // navigate("/");
+    navigate("/");
   };
   
 
@@ -73,7 +79,7 @@ function CreatePlant() {
             value = {site.id}
             // onChange={(e) => setSiteId(e.target.value)}
             >
-                {site.name}
+               {site.name}
             </option>
           ))
           :null}

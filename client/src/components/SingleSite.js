@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams, Link, useNavigate  } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { selectSite, fetchSingleSite, removeSiteAsync } from "../features/SiteSlice";
+import { selectSite, fetchSingleSiteAsync, removeSiteAsync } from "../features/SiteSlice";
+import UpdateSite from "./UpdateSite";
+import { v4 as uuidv4 } from 'uuid';
 
 function SingleSite() {
   const dispatch = useDispatch();
@@ -11,7 +13,7 @@ function SingleSite() {
 const singlePlant = singleSite.plants;
 
   useEffect(() => {
-    dispatch(fetchSingleSite(id));
+    dispatch(fetchSingleSiteAsync(id));
   }, [id, dispatch]);
 
   const handleDelete =  (id) => {
@@ -36,14 +38,17 @@ const singlePlant = singleSite.plants;
             ? singlePlant.map((plant) =>(
               <div
               className='site-plant'
-              key={`map of plants in site list${singleSite.id}`}
+              key={`map of plants in SingleSite${uuidv4()}`} //<--
               >
-              <h3>Plants</h3>
               <Link to ={`/plants/${plant.id}`}>
                 {plant.name}
                 </Link>
                 </div>
             )):`No plants assigned to ${singleSite.name}` }
+          </div>
+
+          <div>
+            < UpdateSite/>
           </div>
       </div>
 

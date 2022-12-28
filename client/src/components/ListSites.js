@@ -11,6 +11,7 @@ function ListSites() {
   const dispatch = useDispatch();
 
   const sites = useSelector(selectSites);
+  console.log('sites list:', sites)
 
   useEffect(() => {
     dispatch(fetchSitesAsync());

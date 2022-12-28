@@ -26,22 +26,22 @@ export const removePlantAsync = createAsyncThunk(
   );
 
 
-// export const updateSinglePlantAsync = createAsyncThunk(
-//   "student/updatePlant",
-//   async (plant) => {
-//     try {
-//       const { id, name, imageUrl, amazonLink, siteId } = plant;
-//       const updatedPlant = { name, imageUrl, amazonLink, siteId }; //what it will be updating?
-//       const { data } = await axios.put(
-//         `http://localhost:8088/api/plants/${id}`,
-//         updatedPlant
-//       );
-//       return data;
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   }
-// );
+export const updateSinglePlantAsync = createAsyncThunk(
+  "plant/updatePlant",
+  async (plant) => {
+    try {
+      const { id, name, imageUrl, amazonLink, siteId } = plant;
+      const updatedPlant = { name, imageUrl, amazonLink, siteId }; //what it will be updating?
+      const { data } = await axios.put(
+        `http://localhost:8088/api/plants/${id}`,
+        updatedPlant
+      );
+      return data;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+);
 
 const singlePlantSlice = createSlice({
   name: "plant",
@@ -56,9 +56,9 @@ const singlePlantSlice = createSlice({
         //we dont update the state for delete
       });
 
-    // builder.addCase(updateSinglePlantAsync.fulfilled, (state, action) => {
-    //   return action.payload;
-    // });
+    builder.addCase(updateSinglePlantAsync.fulfilled, (state, action) => {
+      return action.payload;
+    });
   },
 });
 
