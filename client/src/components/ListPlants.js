@@ -1,12 +1,19 @@
 import "../App.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { selectPlants, fetchPlantsAsync } from "../features/ListPlantsSlice";
+import {
+  selectPlants,
+  fetchPlantsAsync,
+  purchasePlantAsync,
+} from "../features/ListPlantsSlice";
 import CreatePlant from "./CreatePlant";
 
 function ListPlants() {
+  // const [purchased, setPurchased] = useState(false);
+  // const [status, setStatus] = useState(false); 
+  
   const dispatch = useDispatch();
 
   const plants = useSelector(selectPlants);
@@ -15,9 +22,25 @@ function ListPlants() {
     dispatch(fetchPlantsAsync());
   }, [dispatch]);
 
+
+
+  const handleBtn = (id) => {
+    console.log("clicked");
+    console.log('plantid from btn', id)
+    // setPurchased(true);
+    const purchased = true;
+    const updatedPurchase = {id, purchased};
+    dispatch(purchasePlantAsync(updatedPurchase)).then(() => {
+      dispatch(fetchPlantsAsync());
+    });
+    
+  };
+
+  // {plant.purchased === false
+  //   ? 'Got it!': 'Must purchase'}
+
   return (
     <div className="plants-body">
-    
       <div id="plants-list">
         {plants && plants.length
           ? plants.map((plant) => (
@@ -34,6 +57,12 @@ function ListPlants() {
                     width={100}
                   />
                 </Link>
+                <button
+                  className="purchased-btn"
+                  onClick={() => handleBtn(plant.id)}
+                >
+                  {plant.purchased === false ? "Must purchased!" : "Got it!"}
+                </button>
               </div>
             ))
           : null}

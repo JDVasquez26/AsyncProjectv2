@@ -18,8 +18,6 @@ export const addPlantAsync = createAsyncThunk(
   "plants/addPlant",
   async ({ name, imageUrl, amazonLink, siteId}) => {
     console.log("siteId add plant:", siteId);
-    // console.log("site add plant:", site)
-    // Number(siteId)
     try {
       const { data } = await axios.post(`http://localhost:8088/api/plants`, {
         name, imageUrl, amazonLink, siteId
@@ -31,6 +29,27 @@ export const addPlantAsync = createAsyncThunk(
     }
   }
 );
+
+export const purchasePlantAsync = createAsyncThunk(
+  "plant/purchasePlant",
+  async (plant) => {
+    try {
+      const { id, name, imageUrl, amazonLink, purchased, siteId } = plant;
+      console.log("plant thunk purchased", plant)
+      const updatedPlant = { id, purchased }; //what it will be updating?
+      console.log("id update", id)
+      const { data } = await axios.put(
+        `http://localhost:8088/api/plants/${id}`,
+        updatedPlant
+      );
+      console.log('data for pur put', data)
+      return data;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+);
+
 
 
 const ListPlantsSlice = createSlice({

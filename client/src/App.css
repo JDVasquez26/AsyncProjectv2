@@ -1,5 +1,5 @@
 .App {
-  /* text-align: center; */
+  text-align: center;
 }
 
 
@@ -40,7 +40,7 @@ form {
 
 .plants-body{
   display: flex;
-  flex: 0 0 1;
+  /* flex: 0 0 1; */
   justify-content: space-around;
   border: solid red 3px;
 }
@@ -49,12 +49,15 @@ form {
   display: flex;
   justify-content: space-evenly;
   margin: 1em;
+  padding: 2em 2em;
   border: solid black 1px;
-  /* align-items: center; */
+  align-items: center;
   width:70vw;
   height:60vh;
+  flex-wrap: wrap;
   overflow: auto;
   /* margin-block-end: auto; */
+  /* flex-direction: column; */
 
 }
 
@@ -62,6 +65,7 @@ form {
   /* display: flex;
   justify-self: column; */
   padding-right: 20px;
+  
 }
 
 .sites-body{
@@ -79,7 +83,6 @@ form {
 }
 
 button {
-  /* padding: 1em 1em; */
   margin: 1em 1em;
   border: none;
   font-size: 0.75em;
@@ -87,13 +90,12 @@ button {
   outline: none;
   letter-spacing: 0.1em;
   height: 30px;
-  width: 70px;
+  width: 80px;
 }
 
 button {
   color: white;
   background-color: #59a9e9;
-  /* text-align: center; */
 }
 
 button:hover {
@@ -105,4 +107,16 @@ input {
   margin: 0.5em 0.5em;
   font-size: 1.0em;
   text-align: center;
+}
+
+#site-plants{
+  display: flex;
+  justify-content: space-evenly;
+  border: solid black 1px;
+  padding: 1em 1em;
+}
+
+
+#plant-details{
+ margin: 1em 1em;
 }

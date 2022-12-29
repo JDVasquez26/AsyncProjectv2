@@ -18,8 +18,8 @@ function SinglePlant() {
 
 const handleDelete =  (id) => {
   dispatch(removePlantAsync(id))
-  // .then(() => { dispatch(fetchPlantsAsync());
-  // });
+  .then(() => { dispatch(fetchPlantsAsync());
+  });
   navigate("/");
 }
 
@@ -38,14 +38,17 @@ const handleDelete =  (id) => {
           <img
             src={singlePlant.imageUrl}
             alt="plant"
-            height={350}
-            width={380}
+            height={100}
+            width={100}
           />
         </div>
+        
+        {/* {singlePlant.site ? <div> {singlePlant.site} </div> : "has not been assigned a site!"} */}
 
-      
+      {singlePlant.amazonLink 
+      ? <a target= "_blank" rel="noreferrer" href={singlePlant.amazonLink}>Amazon Link</a>: null}
 
-      <div id="form-container"></div>
+    
 
       <div>
         <UpdatePlant/>

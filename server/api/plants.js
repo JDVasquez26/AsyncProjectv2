@@ -7,6 +7,9 @@ router.get("/", async (req, res, next) => {
     res.send(
       await Plant.findAll({
         include: [Site],
+        order: [ //order by the plant name, ascending (a-z) 
+          ["name", "ASC"] //https://sequelize.org/docs/v6/core-concepts/model-querying-basics/#ordering
+        ]
       })
     );
   } catch (error) {

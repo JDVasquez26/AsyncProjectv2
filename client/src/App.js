@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Routes, Route, Link } from "react-router-dom";
 import {
   ListPlants,
@@ -10,9 +10,21 @@ import {
   SinglePlant,
   SingleSite
 } from './components/index'
+import { fetchSitesAsync, selectSites } from "./features/ListSitesSlice";
+import { fetchPlantsAsync, selectPlants } from "./features/ListPlantsSlice";
 
 
 function App() {
+  const dispatch = useDispatch();
+
+const sites = useSelector(selectSites);
+const plants = useSelector(selectPlants);
+
+useEffect(() => {
+  dispatch(fetchPlantsAsync());
+  dispatch(fetchSitesAsync());
+}, [dispatch])
+
   return (
     <div className="App">
       <header className="App-header">
@@ -28,7 +40,7 @@ function App() {
         <br></br>
         <br></br>
         <br></br>
-        <Link to="/wishlist">Wishlist</Link>
+        {/* <Link to="/wishlist">Wishlist</Link> */}
       </nav>
   
       <Routes>
