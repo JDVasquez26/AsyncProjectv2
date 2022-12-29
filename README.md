@@ -9,13 +9,6 @@ features:
 - updating individual plants and tasks
 
 
-Components:
-- A Node.js program that will use Express to listen for HTTP messages.
-- Within server program, a Postgres database will be used to store plants and sites
-- Sequelize will be used to define and interact with plants and sites tables
-- The server will serve up HTTP documents to render the user-facing portion of the application
-- Some CSS and front-end Javascript will be used to improve user expirence in the browser
-
 Proposed task order (subject to change):
 - set up initial boilerplate for project(git setup, installing libraries, establishing basic routes, creating database)
 - Defining models with Sequelize for plants and plant sites, and relating them
