@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPlantsAsync, addPlantAsync } from "../features/ListPlantsSlice";
@@ -12,7 +12,7 @@ function CreatePlant() {
   const [imageUrl, setImageUrl] = useState("");
   const [amazonLink, setAmazonLink] = useState("");
   const [siteId, setSiteId] = useState();
-  // const [site, setSite] = useState()
+
 
   
   const allSites = useSelector(selectSites);
@@ -32,7 +32,6 @@ function CreatePlant() {
     setName("");
     setImageUrl('')
     setAmazonLink('')
-    // setSiteId('');
     navigate("/");
   };
   
@@ -77,7 +76,6 @@ function CreatePlant() {
             <option 
             key={`map of sites in sites list${site.id}`}
             value = {site.id}
-            // onChange={(e) => setSiteId(e.target.value)}
             >
                {site.name}
             </option>

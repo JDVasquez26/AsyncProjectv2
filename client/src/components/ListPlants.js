@@ -11,7 +11,7 @@ import {
 import CreatePlant from "./CreatePlant";
 
 function ListPlants() {
-  // const [purchased, setPurchased] = useState(false);
+  const [purchased, setPurchased] = useState(false);
   // const [status, setStatus] = useState(false); 
   
   const dispatch = useDispatch();
@@ -23,21 +23,16 @@ function ListPlants() {
   }, [dispatch]);
 
 
-
   const handleBtn = (id) => {
     console.log("clicked");
     console.log('plantid from btn', id)
-    // setPurchased(true);
-    const purchased = true;
+    setPurchased(!purchased)
     const updatedPurchase = {id, purchased};
     dispatch(purchasePlantAsync(updatedPurchase)).then(() => {
       dispatch(fetchPlantsAsync());
     });
     
   };
-
-  // {plant.purchased === false
-  //   ? 'Got it!': 'Must purchase'}
 
   return (
     <div className="plants-body">

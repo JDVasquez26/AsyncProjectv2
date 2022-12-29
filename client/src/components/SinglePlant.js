@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSinglePlant, removePlantAsync, selectPlant } from "../features/PlantSlice";
 import { fetchPlantsAsync } from "../features/ListPlantsSlice";
@@ -43,13 +43,10 @@ const handleDelete =  (id) => {
           />
         </div>
         
-        {/* {singlePlant.site ? <div> {singlePlant.site} </div> : "has not been assigned a site!"} */}
+        {singlePlant.site.name ? <h5> {singlePlant.site.name} </h5> : "has not been assigned a site!"}
 
       {singlePlant.amazonLink 
       ? <a target= "_blank" rel="noreferrer" href={singlePlant.amazonLink}>Amazon Link</a>: null}
-
-    
-
       <div>
         <UpdatePlant/>
       </div>

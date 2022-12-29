@@ -31,30 +31,10 @@ router.get("/:id", async (req, res, next) => {
 });
 
 //POST localhost:8088/api/plants
-// router.post('/', async (req, res, next) => {
+// NOT WORKING: router.post('/', async (req, res, next) => { 
 //   console.log("post plants: ", req.body)
 //   try {
 //     res.status(201).send(await Plant.create(req.body));
-//   } catch (error) {
-//     next(error);
-//   }
-// });
-// router.post("/", async (req, res, next) => {
-//   console.log("post plants: ", req.body);
-//   try {
-//     res.status(201).send(
-//       await Plant.create({
-//           name: req.body.name,
-//           imageUrl: req.body.imageUrl || null,
-//           amazonLink: req.body.amazonLink || null,
-//           // siteId: req.body.siteId
-//       })
-    
-//       );
-//     // const currentSite = await Site.findById(req.body.siteId);
-//     // console.log("magic methods:" , Object.keys(currentSite.__proto__));
-//     // await currentSite.addPlant(newPlant[0]);
-//     // res.json(Plant[0]);
 //   } catch (error) {
 //     next(error);
 //   }
@@ -70,7 +50,7 @@ router.post("/", async (req, res, next) => {
           imageUrl: req.body.imageUrl || null,
           amazonLink: req.body.amazonLink || null,
         }
-      });    
+      });    //source for code for this part: https://medium.com/@jasmine.esplago.munoz/feeling-the-magic-with-sequelize-magic-methods-e9cc89ecdcc5
     const currentSite = await Site.findByPk(req.body.siteId);
     // console.log("magic methods:" , Object.keys(currentSite.__proto__));
     await currentSite.addPlant(plant[0]);
@@ -83,7 +63,7 @@ router.post("/", async (req, res, next) => {
 
 
 
-//   // PUT localhost:3001/api/plants/:id
+// PUT localhost:3001/api/plants/:id
   router.put('/:id', async (req, res, next) => {
     try {
       const plant = await Plant.findByPk(req.params.id);

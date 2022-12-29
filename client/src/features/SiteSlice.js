@@ -44,22 +44,6 @@ export const updateSiteAsync = createAsyncThunk(
   }
 );
 
-// export const unregisterStudentAsync = createAsyncThunk(
-//   "student/unregisterStudent",
-//   async (student) => {
-//     try {
-//       const { studentId, firstName, email, gpa, campusId } = student;
-//       const updatedStudent = { studentId, campusId }; //what it will be updating?
-//       const { data } = await axios.put(
-//         `/api/students/${studentId}`,
-//         updatedStudent
-//       );
-//       return data;
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   }
-// );
 
 const singleSiteSlice = createSlice({
   name: "site",
@@ -79,9 +63,6 @@ const singleSiteSlice = createSlice({
       });
 
     
-    // builder.addCase(unregisterStudentAsync.fulfilled, (state, action) => {
-    //   return action.payload;
-    // });
   },
 });
 

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addSiteAsync } from "../features/ListSitesSlice";
 
@@ -8,7 +7,6 @@ function CreateSite() {
   const [lighting, setLighting] = useState("");
 
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
 
   const handleSubmit = (evt) => {
     evt.preventDefault();

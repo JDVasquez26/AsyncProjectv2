@@ -44,13 +44,6 @@ const seed = async () => {
     siteId: Entry.id,
   });
 
-  //  const stringPlant = await Plant.create({
-  //     name: "String of Pearls",
-  //     imageUrl:"https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/51azht3fisL._AC_SX466_.jpg",
-  //     amazonLink:"https://www.amazon.com/String-Pearls-Senecio-rowleyanus-Succulent/dp/B07P1CKKT3?ref_=ast_sto_dp",
-  //     purchased: false,
-  //    siteId:
-  //  });
 
   dbConnection.close();
   console.log(`
