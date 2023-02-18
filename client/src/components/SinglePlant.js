@@ -43,7 +43,7 @@ const handleDelete =  (id) => {
           />
         </div>
         
-        {singlePlant.site.name ? <h5> {singlePlant.site.name} </h5> : "has not been assigned a site!"}
+        {/* {singlePlant.site.name ? <h5> {singlePlant.site.name} </h5> : "has not been assigned a site!"} */}
 
       {singlePlant.amazonLink 
       ? <a target= "_blank" rel="noreferrer" href={singlePlant.amazonLink}>Amazon Link</a>: null}
