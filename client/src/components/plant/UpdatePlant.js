@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector} from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
-import { updateSinglePlantAsync, fetchSinglePlant } from "../features/PlantSlice";
+import { updateSinglePlantAsync, fetchSinglePlant } from "../../features/plantFeatures/PlantSlice";
 import {
   selectSites, fetchSitesAsync
-  } from '../features/ListSitesSlice'
+  } from '../../features/siteFeatures/ListSitesSlice'
 
 function UpdatePlant() {
   const [name, setName] = useState("");

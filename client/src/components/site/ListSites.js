@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
 selectSites,
 fetchSitesAsync,
-} from '../features/ListSitesSlice'
+} from '../../features/siteFeatures/ListSitesSlice'
 import CreateSite from './CreateSite'
 
 function ListSites() {

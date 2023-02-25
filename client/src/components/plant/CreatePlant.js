@@ -1,10 +1,10 @@
 import React, { useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPlantsAsync, addPlantAsync } from "../features/ListPlantsSlice";
+import { fetchPlantsAsync, addPlantAsync } from "../../features/plantFeatures/ListPlantsSlice";
 import {
     selectSites, fetchSitesAsync
-    } from '../features/ListSitesSlice'
+    } from '../../features/siteFeatures/ListSitesSlice'
 function CreatePlant() {
 
 

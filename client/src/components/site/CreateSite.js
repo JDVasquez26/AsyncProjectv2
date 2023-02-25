@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addSiteAsync } from "../features/ListSitesSlice";
+import { addSiteAsync } from "../../features/siteFeatures/ListSitesSlice";
 
 function CreateSite() {
   const [name, setName] = useState("");

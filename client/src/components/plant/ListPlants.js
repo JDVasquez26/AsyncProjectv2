@@ -1,4 +1,4 @@
-import "../App.css";
+
 import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import {
   selectPlants,
   fetchPlantsAsync,
   purchasePlantAsync,
-} from "../features/ListPlantsSlice";
+} from "../../features/plantFeatures/ListPlantsSlice";
 import CreatePlant from "./CreatePlant";
 
 function ListPlants() {

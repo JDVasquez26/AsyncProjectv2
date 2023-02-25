@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSinglePlant, removePlantAsync, selectPlant } from "../features/PlantSlice";
-import { fetchPlantsAsync } from "../features/ListPlantsSlice";
+import { fetchSinglePlant, removePlantAsync, selectPlant } from "../../features/plantFeatures/PlantSlice";
+import { fetchPlantsAsync } from "../../features/plantFeatures/ListPlantsSlice";
 import UpdatePlant from './UpdatePlant'
 
 function SinglePlant() {
